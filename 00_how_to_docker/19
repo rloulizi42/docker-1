@@ -1,7 +1,7 @@
 docker run --name Abathur -v "$(HOME)/Abathur":/root -p 3000:3000 -dt python:2-slim
 docker exec -it /bin/bash Abathur
 apt-get update && apt-get upgrade && pip install flask && apt-get install vim
-cd root
+cd "$(HOME)/Abathur"
 vim page.py
 ####################################################################
 from flask import Flask
@@ -14,4 +14,4 @@ if __name__ == "__main__":
         app.run(host='0.0.0.0', port=3000)
 ####################################################################
 python page.py
-Navigateur web -> (ip de Char):3000
+Navigateur web -> $(docker ip Char):3000
