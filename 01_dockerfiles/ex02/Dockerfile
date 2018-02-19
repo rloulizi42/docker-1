@@ -1,4 +1,4 @@
-FROM Debian
+FROM Ruby
 
 RUN apt-get update -y && \
     apt-get install rails -y && \
